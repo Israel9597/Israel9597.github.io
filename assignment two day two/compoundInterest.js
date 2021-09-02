@@ -6,9 +6,9 @@ multiplying the intial amount,annual rate and time together
 out puts the balance of saving including the interest/** */
 
 function compoundInterest(intialAmount, annualRate, time) {
-  const annualInterest =
-    intialAmount * Math.pow(1 + annualRate / time, time * 12);
-  return console.log(annualInterest);
+  let annualInterest =
+    intialAmount * Math.pow(1 + annualRate / 100 / 12, time * 12);
+  return annualInterest;
 }
 //const balanceOfsavings = intialAmount + (intialAmount * annualRate * time);
-compoundInterest(100, 10, 1);
+console.logcompoundInterest(100, 10, 1);

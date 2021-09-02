@@ -11,22 +11,20 @@
  */
 
 function computeSalesCommission(sal, amt) {
+  let commission = 0;
   if (sal === true) {
-    if (amt < 300) {
-      return console.log("no commissions");
-    } else if (amt > 300 && amt < 500) {
-      return console.log("commission=" + " " + amt * 0.01);
+    if (amt >= 300 && amt <= 500) {
+      commission = amt * 0.01;
     } else if (amt > 500) {
-      return console.log("commission=" + " " + amt * 0.02);
+      commission = (amt - 500) * 0.02 + 5;
     }
-  } else if (sal === fales) {
-    if (amt < 300) {
-      return console.log("no commissions");
-    } else if (amt > 300 && amt < 500) {
-      return console.log("commission=" + " " + amt * 0.02);
+  } else if (sal === false) {
+    if (amt >= 300 && amt <= 500) {
+      commission = amt * 0.02;
     } else if (amt > 500) {
-      return console.log("commission=" + " " + amt * 0.03);
+      commission = (amt - 500) * 0.03 + 10;
     }
   }
+  return commission;
 }
-computeSalesCommission(true, 600);
+console.log(computeSalesCommission(true, 600));
