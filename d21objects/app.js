@@ -80,10 +80,12 @@ function findIDs() {
  */
 function addBook(title, author, libraryID) {
   const newBook = {};
-  title = document.getElementById("title"); //retrieves the book title from the title textbox
-  //finish the implementation -- get the author, create a book object, and add to the library array
-  author = document.getElementById("author");
-  bookId = document.getElementById("bookid");
+
+  // title = document.getElementById("title"); //retrieves the book title from the title textbox
+  // //finish the implementation -- get the author, create a book object, and add to the library array
+  // author = document.getElementById("author");
+  // bookId = document.getElementById("bookid");
+
   newBook.title = title;
   newBook.author = author;
   newBook.libraryID = libraryID;
@@ -93,9 +95,9 @@ function addBook(title, author, libraryID) {
 }
 
 /**
- * @returns {undefined}
+ * @returns {undefined} no return
+ * Event handler for Add book buttoe.
  */
-
 function showAuthor() {
   const auth = findAuthors();
   auth.sort();
