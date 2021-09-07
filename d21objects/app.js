@@ -80,14 +80,28 @@ function findIDs() {
  */
 function addBook(title, author, libraryID) {
   const newBook = {};
-  // title = document.getElementById("title"); //retrieves the book title from the title textbox
-  // //finish the implementation -- get the author, create a book object, and add to the library array
-  // author = document.getElementById("author");
-  // bookId = document.getElementById("bookid");
+  title = document.getElementById("title"); //retrieves the book title from the title textbox
+  //finish the implementation -- get the author, create a book object, and add to the library array
+  author = document.getElementById("author");
+  bookId = document.getElementById("bookid");
   newBook.title = title;
   newBook.author = author;
   newBook.libraryID = libraryID;
 
   library.push(newBook);
   return newBook;
+}
+
+/**
+ * @returns {undefined}
+ */
+
+function showAuthor() {
+  const auth = findAuthors();
+  auth.sort();
+
+  const nameAuthor = auth.join("\n");
+
+  let textArea = document.getElementById("authordisplayArea");
+  textArea.innerHTML = nameAuthor;
 }
