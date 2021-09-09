@@ -30,30 +30,51 @@ bank.saveTransaction = function (id, amount) {
 bank.debit = function (id, amount) {
   /* make sure current balance is > amount */
   //IMPLEMENT THIS
+  const balance = this.getBalance(id);
+  if (balance > amount) {
+    const item = bank.transactionsDB.find(function (customer) {
+      customer.customerId === id;
+    });
+    item.customerTransactions.push(-amount);
+  }
 };
 
 bank.credit = function (id, amount) {
   const balance = this.getBalance(id);
-  balance.balance += amount;
+  //balance.balance += amount;
   this.saveTransaction(id, amount);
 };
 
 bank.getBalance = function (id) {
   //IMPLEMENT THIS
+  const customer = bank.transactionsDB.find(function (item) {
+    return item.customerId === id;
+  });
+  const balance = customer.customerTransactions.reduce(
+    (accu, cust) => accu + cust,
+    0
+  );
+  return balance;
 };
-
 /**
  * @returns {number}  returns sum of all balances
  */
 bank.bankBalance = function () {
   //IMPLEMENT THIS
+  let sum = 0;
+  for (let i = 0; i < bank.transactionsDB.length; i++) {
+    const id = bank.transactionsDB[i].customerId;
+    const total = this.getBalance(id);
+    sum = sum + total;
+  }
+  return sum;
 };
 
-console.log("total balance should be 85: ", bank.bankBalance());
-bank.credit(1, 20);
-bank.debit(1, 1000);
-console.log("total should now be 105: ", bank.bankBalance());
+//console.log("total balance should be 85: ", bank.bankBalance());
+// bank.credit(1, 20);
+// bank.debit(1, 1000);
+//console.log("total should now be 105: ", bank.bankBalance());
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
 /* must be at end of file if are exporting an object so the export is after the definition */
-//module.exports = { bank }; //add all of your object names here that you need for the node mocha tests
+module.exports = { bank }; //add all of your object names here that you need for the node mocha tests
