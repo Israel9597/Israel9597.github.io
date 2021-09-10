@@ -2,7 +2,14 @@
 /* eslint-disable */
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
-//module.exports = { ucFirst, getMaxSubSum, truncate, camelize, checkSpam }; //add all of your function names here that you need for the node mocha tests
+//module.exports = {
+//   ucFirst,
+//   getMaxSubSum,
+//   truncate,
+//   camelize,
+//   checkSpam,
+//   extractCurrencyValue,
+// }; //add all of your function names here that you need for the node mocha tests
 
 function ucFirst(str) {
   let word = str.slice(0, 1);
@@ -15,15 +22,20 @@ function checkSpam(str) {
 }
 
 function truncate(str, maxlength) {
-  let word;
-  if (str > maxlength) {
-    word = str.slice(0, 20) + "…";
-
-    return word;
-  } else {
-    return str;
+  const end = "…";
+  if (str >= maxlength) {
+    return str.slice(0, maxlength - 1) + end;
   }
+  return str.slice(0, maxlength + 1);
 }
+
+function extractCurrencyValue(str) {
+  let word = str.slice(1);
+  let currency = parseInt(word);
+
+  return currency;
+}
+console.log(extractCurrencyValue("$120"));
 
 /**
  * 
@@ -33,4 +45,13 @@ function truncate(str, maxlength) {
  */
 function getMaxSubSum(arr) {}
 
-function camelize(str) {}
+function camelize(str) {
+  let word = str.split("-");
+  let newWord = "";
+  newWord += word[0];
+  for (let i = 1; i < word.length; i++) {
+    let words = word[i];
+    newWord = newWord + word[i].charAt(0).toUpperCase() + words.slice(1);
+  }
+  return newWord;
+}
