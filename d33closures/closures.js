@@ -10,9 +10,14 @@ module.exports = { inArray, inBetween, byField, makeArmy }; //add all of your fu
  *
  */
 function inArray(arr) {
-  arr.filter((element) => {
-    return element;
-  });
+  return function (num) {
+    for (const element of arr) {
+      if (element === num) {
+        return true;
+      }
+    }
+    return false;
+  };
 }
 
 /**
@@ -23,7 +28,9 @@ function inArray(arr) {
  *
  */
 function inBetween(low, high) {
-  return arr.filter((item) => item >= low && item <= high);
+  return function (item) {
+    return item >= low && item <= high;
+  };
 }
 
 /**
@@ -46,10 +53,16 @@ function byField(fieldName) {
  * @returns {Function} closure that returns it's number
  */
 function makeArmy() {
-  let shooter = function () {
-    console.log("I am shooter ", idx);
-    return idx;
-  };
+  let shooters = [];
+
+  for (let i = 0; i < 10; i++) {
+    let shooter = function () {
+      alert(i);
+    };
+    shooters.push(shooter);
+  }
+
+  return shooters;
 }
 
 let army = makeArmy();
