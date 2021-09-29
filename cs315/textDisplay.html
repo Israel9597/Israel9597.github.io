@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>"Adding text and display"</title>
+  </head>
+  <body>
+    <h3>Input</h3>
+    <p>
+      <input id="id1" type="text" placeholder=" " />
+    </p>
+    <h3>Output</h3>
+    <p>
+      <textarea id="id2" rows="4"></textarea><br />
+
+      <button onclick="text()">click to add</button>
+    </p>
+
+    <script>
+      function text() {
+        let inputItem = document.getElementById("id1");
+        let outputItem = document.getElementsById("id2");
+        outputItem.value = inputItem.value;
+        let p = document.createElement("p");
+        p.innerHTML = outputItem;
+        document.body.append(p);
+      }
+    </script>
+  </body>
+</html>
