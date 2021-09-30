@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>"Adding text and display"</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+
+  <body>
+    <h3>Inventory</h3>
+    <h5>Item Name</h5>
+    <p>
+      <input id="id1" type="text" placeholder=" " />
+    </p>
+    <h5>Item Catagory</h5>
+    <p>
+      <input id="id11" type="text" placeholder=" " />
+    </p>
+    <h5>Quantity</h5>
+    <p>
+      <input id="id111" type="text" placeholder=" " />
+    </p>
+    <h5>Rating</h5>
+    <p>
+      <input id="id112" type="text" placeholder=" " />
+    </p>
+
+    <button id="bt1" onclick="Add()">Add</button>
+
+    <table id="tableId">
+      <tr>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+      </tr>
+      <tr>
+        <td id="id2"></td>
+        <td id="id22"></td>
+        <td id="id222"></td>
+      </tr>
+      <tr>
+        <td id="id2"></td>
+        <td id="id22"></td>
+        <td id="id222"></td>
+      </tr>
+      <tr>
+        <td id="id2"></td>
+        <td id="id22"></td>
+        <td id="id222"></td>
+      </tr>
+    </table>
+    >
+
+    <script>
+      function Add() {
+        function addItem() {
+          let table = document.getElementById("tableId");
+
+          let names = document.getElementById("name");
+
+          let category = document.getElementById("category");
+
+          let quantity = document.getElementById("quantity");
+
+          let trow = document.createElement("tr");
+
+          table.append(trow);
+
+          let tdata = document.createElement("td");
+
+          tr.append(tdata);
+
+          tdata.innerText = names.value;
+
+          let tdCatagory = document.createElement("td");
+
+          tr.append(tdCatagory);
+
+          tdCat.innerText = category.value;
+
+          let tdQ = document.createElement("td");
+
+          tr.append(tdQ);
+
+          tdQ.innerText = quantity.value;
+        }
+      }
+    </script>
+  </body>
+</html>
