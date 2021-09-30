@@ -1,0 +1,57 @@
+table {
+  width: 800px;
+}
+
+th {
+  text-align: left;
+}
+
+th {
+  border: 0px solid black;
+  border-collapse: collapse;
+  background-color: rgb(43, 91, 224);
+  color: white;
+  font-size: 10;
+  padding: 5;
+}
+
+#id1 {
+  width: 800px;
+}
+#id11 {
+  width: 800px;
+}
+#id111 {
+  width: 800px;
+}
+#id112 {
+  width: 800px;
+}
+
+#bt1 {
+  text-align: right;
+  margin: 10;
+  background-color: rgb(84, 231, 84);
+}
+#id2 {
+  border: 1px solid black;
+  border-collapse: collapse;
+  color: black;
+  font-size: 10;
+  padding: 5;
+}
+
+#id22 {
+  border: 1px solid black;
+  border-collapse: collapse;
+  color: black;
+  font-size: 10;
+  padding: 5;
+}
+#id222 {
+  border: 1px solid black;
+  border-collapse: collapse;
+  color: black;
+  font-size: 10;
+  padding: 5;
+}
